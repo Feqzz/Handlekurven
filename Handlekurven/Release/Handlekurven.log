@@ -1,0 +1,37 @@
+﻿  Main.cpp
+  cScreen.cpp
+  cart.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\cart.cpp(23,25): warning C4101: 'e': unreferenced local variable
+  month.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\cart.cpp(43,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(47,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(47,39): warning C4244:         with
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(47,39): warning C4244:         [
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(47,39): warning C4244:             T=float
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(47,39): warning C4244:         ]
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(48,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(52,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(52,39): warning C4244:         with
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(52,39): warning C4244:         [
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(52,39): warning C4244:             T=float
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(52,39): warning C4244:         ]
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(53,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+  purchase.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\month.cpp(81,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\purchase.cpp(34,18): warning C4018: '<': signed/unsigned mismatch
+  screen_0.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\purchase.cpp(34,45): warning C4018: '<': signed/unsigned mismatch
+  screen_1.cpp
+  screen_2.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_0.cpp(119,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(85,72): warning C4018: '>': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(186,37): warning C4018: '<': signed/unsigned mismatch
+  screens.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(204,33): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  Compiler version has changed, fall back to full compilation.
+  All 401 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Handlekurven.vcxproj -> C:\Users\stian\source\repos\Handlekurven\Release\Handlekurven.exe

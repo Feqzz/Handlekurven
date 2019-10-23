@@ -1,0 +1,6 @@
+﻿  screen_2.cpp
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(85,72): warning C4018: '>': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(186,37): warning C4018: '<': signed/unsigned mismatch
+C:\Users\stian\source\repos\Handlekurven\Handlekurven\screen_2.cpp(204,33): warning C4018: '<': signed/unsigned mismatch
+  Handlekurven.vcxproj -> C:\Users\stian\source\repos\Handlekurven\Debug\Handlekurven.exe
