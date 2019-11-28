@@ -74,7 +74,7 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 
 	sf::Clock myClock;
 	bool showCursor = false;
-	bool showMarkedText = false;
+	bool markUserText = false;
 
 	int inputLimit = 23;
 
@@ -101,11 +101,12 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 						|| event.text.unicode == 230 || event.text.unicode == 198 || event.text.unicode == 216
 						|| event.text.unicode == 197) //זרו + ֶ״ֵ valid input
 					{
-						if (showMarkedText)
+						if (markUserText)
 						{
 							userInput.erase(userInput.getSize() - userInput.getSize(), userInput.getSize());
 							if (userInput.getSize() < inputLimit && event.text.unicode != '\b' && event.text.unicode != 13) userInput += event.text.unicode;
-							showMarkedText = false;
+							userText.setFillColor(sf::Color::Black);
+							markUserText = false;
 						}
 						else if (event.text.unicode == '\b')
 						{
@@ -124,7 +125,8 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 						else if (event.text.unicode == 1)
 						{
 							std::cout << "ctrl+a entered" << std::endl;
-							showMarkedText = true;
+							userText.setFillColor(sf::Color(53, 164, 198));
+							markUserText = true;
 						}
 						else
 						{
@@ -178,7 +180,7 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 		{
 			myClock.restart();
 			showCursor = !showCursor;
-			if (showCursor && !showMarkedText) userText.setString(userInput + "_");
+			if (showCursor && !markUserText) userText.setString(userInput + "_");
 			else userText.setString(userInput);
 		}
 		app.clear();
@@ -198,18 +200,6 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 		{
 			app.draw(addedText);
 			showUserText = false;
-		}
-
-		sf::FloatRect backgroundRect = userText.getLocalBounds();
-		sf::RectangleShape backgroundTwo(sf::Vector2f(backgroundRect.width, backgroundRect.height));
-		backgroundTwo.setFillColor(sf::Color::Red);
-
-
-
-
-		if (showMarkedText)
-		{
-			app.draw(backgroundTwo, userText.getTransform());
 		}
 		app.display();
 	}
