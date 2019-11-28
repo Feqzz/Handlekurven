@@ -74,6 +74,7 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 
 	sf::Clock myClock;
 	bool showCursor = false;
+	bool showMarkedText = false;
 
 	int inputLimit = 23;
 
@@ -100,7 +101,13 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 						|| event.text.unicode == 230 || event.text.unicode == 198 || event.text.unicode == 216
 						|| event.text.unicode == 197) //זרו + ֶ״ֵ valid input
 					{
-						if (event.text.unicode == '\b')
+						if (showMarkedText)
+						{
+							userInput.erase(userInput.getSize() - userInput.getSize(), userInput.getSize());
+							if (userInput.getSize() < inputLimit && event.text.unicode != '\b' && event.text.unicode != 13) userInput += event.text.unicode;
+							showMarkedText = false;
+						}
+						else if (event.text.unicode == '\b')
 						{
 							if (userInput.getSize())
 							{
@@ -114,13 +121,18 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 							userInput.clear();
 							userText.setString(userInput);
 						}
+						else if (event.text.unicode == 1)
+						{
+							std::cout << "ctrl+a entered" << std::endl;
+							showMarkedText = true;
+						}
 						else
 						{
 							if (userInput.getSize() < inputLimit) userInput += event.text.unicode;
 							showUserText = true;
 						}
 						userText.setString(userInput);
-						std::cout << userInput.getSize() << std::endl;
+						std::cout << event.text.unicode << " | " << userInput.getSize() << std::endl;
 					}
 					break;
 				}
@@ -166,7 +178,7 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 		{
 			myClock.restart();
 			showCursor = !showCursor;
-			if (showCursor) userText.setString(userInput + "_");
+			if (showCursor && !showMarkedText) userText.setString(userInput + "_");
 			else userText.setString(userInput);
 		}
 		app.clear();
@@ -186,6 +198,18 @@ int screen_0::Run(sf::RenderWindow& app, cart &c)
 		{
 			app.draw(addedText);
 			showUserText = false;
+		}
+
+		sf::FloatRect backgroundRect = userText.getLocalBounds();
+		sf::RectangleShape backgroundTwo(sf::Vector2f(backgroundRect.width, backgroundRect.height));
+		backgroundTwo.setFillColor(sf::Color::Red);
+
+
+
+
+		if (showMarkedText)
+		{
+			app.draw(backgroundTwo, userText.getTransform());
 		}
 		app.display();
 	}
