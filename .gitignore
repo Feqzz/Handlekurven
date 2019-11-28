@@ -9,9 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.vscode
 
-
+.vscode
 purchases2019.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
